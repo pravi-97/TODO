@@ -1,12 +1,53 @@
-# React + Vite
+# 📝 TodoApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple local todo manager built using **React** and **Electron**, styled with **Bootstrap**.  
+Todos are stored using `localStorage`, and the app can run as a desktop app without installation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 How to Build the App
 
-## Expanding the ESLint configuration
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/pravi-97/TODO.git
+cd TODO
+```
+#### 2. Install Dependencies
+```bash
+npm run build
+```
+#### 3. Build the React App
+```bash
+npm run build
+```
+This will build the React frontend into the dist folder.
+#### 4. Run the Electron App
+```bash
+npm run electron
+```
+To run React + Electron in development mode simultaneously:
+```bash
+npm run electron-dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Launch on Windows Startup
+You can add a .bat script to launch the app automatically when Windows starts.
+
+#### 1. Create a .bat file (e.g., start-todo.bat) with the following content:
+```bash
+@echo off
+cd /d "C:\path\to\your\project"
+npx electron .
+```
+Replace **C:\path\to\your\project** with the actual absolute path to your project folder.
+Add it to Startup:
+
+* Press **Win+R**, type shell:startup, and press Enter.
+* Copy start-todo.bat into that folder.
+
+Now, the app will launch every time Windows starts.
+
+## 📦 Optional: Build an EXE
+```bash
+npx electron-builder
+```
