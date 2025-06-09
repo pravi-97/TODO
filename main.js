@@ -11,6 +11,7 @@ function createWindow() {
     width: 1100,
     height: 700,
     icon: iconPath,
+    autoHideMenuBar: true,
   });
 
   if (process.env.NODE_ENV === 'development') {
